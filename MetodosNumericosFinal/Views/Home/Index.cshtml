@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Home</h1>
+    <p>Choose an option</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 box-button">
+            <button type="button" id="add" class="btn btn-primary btn-lg btn-block" onclick="location.href='@Url.Action("IntegracionForm","Home")'">Integracion</button>
+        </div>
+        <div class="col-sm-4 box-button">
+            <button type="button" class="btn btn-primary btn-lg btn-block " onclick="location.href='@Url.Action("FerivacionForm","Home")'">Derivacion</button>
+        </div>
+        <div class="col-sm-4 box-button">
+            <button type="button" class="btn btn-danger btn-lg btn-block " onclick="location.href='@Url.Action("DeleteTypeForm","Home")'">biseccion y regla falsa (not yet)</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Integracion";
+}
+<div class="container" style="padding-top: 20px">
+    <div class="row">
+        <div class="col-md-4">            
+            <form method="post">
+                <!--Important to do very well!-->
+                <div class="form-group">
+                    <label for="fxi">Fxi</label>
+                    <input type="text" class="form-control" id="fxi" placeholder="sin(x)*e^3x">
+                </div>
+                <div class="form-group">
+                    <label for="a">Limite inferior a</label>
+                    <input type="text" class="form-control" id="a" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="b">Limite superior b</label>
+                    <input type="text" class="form-control" id="b" placeholder="2">
+                </div>
+                <div class="form-group">
+                    <label for="n">Numero de iteraciones n</label>
+                    <input type="text" class="form-control" id="n" placeholder="2">
+                </div>
+                <button type="submit" onclick="simpsonResult()" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-8">
+            <div id="tablePartial">
+                @Html.Partial("tableResultPartial", Session["tableSimpson"]);
+            </div>         
+        </div>
+    </div>
+
+</div>

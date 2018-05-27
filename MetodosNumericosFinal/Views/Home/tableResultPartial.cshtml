@@ -1,0 +1,21 @@
+﻿<table class="table">
+    <thead>
+        <tr>
+            <th>n</th>
+            <th>Xi</th>
+            <th>Fxi</th>
+            <th>Simpson 1/3</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (MetodosNumericosFinal.Models.Simpson s in (List<MetodosNumericosFinal.Models.Simpson>)Session["tableSimpson"]) 
+        {
+            <tr>
+                <td>@s.n</td>
+                <td>@s.x</td>
+                <td>@s.fx</td>
+                <td>@s.resp</td>
+            </tr>
+        }
+    </tbody>
+</table>
