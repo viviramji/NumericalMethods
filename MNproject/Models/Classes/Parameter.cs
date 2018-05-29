@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MetodosNumericosFinal.Models
+namespace MNproject.Models.Classes
 {
-    public class element
+    public class Parameter
     {
         public string fx { get; set; }
         public string n { get; set; }

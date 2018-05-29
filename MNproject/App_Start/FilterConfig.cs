@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace MetodosNumericosFinal
+namespace MNproject
 {
     public class FilterConfig
     {

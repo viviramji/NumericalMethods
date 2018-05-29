@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general sobre un ensamblado se controla mediante lo siguiente
 // conjunto de atributos. Cambie los valores de estos atributos para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("MetodosNumericosFinal")]
+[assembly: AssemblyTitle("MNproject")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MetodosNumericosFinal")]
+[assembly: AssemblyProduct("MNproject")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como ID de typelib si este proyecto se expone a COM
-[assembly: Guid("ffa73332-8689-4a58-be1b-b5ff76fe21b3")]
+[assembly: Guid("b2dd1c8d-529d-4ebe-a2f5-80a0b5b03cb9")]
 
 // La información de versión de un ensamblado consta de los siguientes cuatro valores:
 //

@@ -1,0 +1,26 @@
+﻿<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>n</th>
+                <th>Xi</th>
+                <th>Fxi</th>
+                <th>Simpson 1/3</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (MNproject.Models.Classes.Simpson s in (List<MNproject.Models.Classes.Simpson>)Session["tableSimpson"])
+            {
+                <tr>
+                    <td>@s.n</td>
+                    <td>@s.x</td>
+                    <td>@s.fx</td>
+                    <td>@s.simpsonXi</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h3>Results</h3>    
+</div>
+
+

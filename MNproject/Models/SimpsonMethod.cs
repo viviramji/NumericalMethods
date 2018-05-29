@@ -4,30 +4,31 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 using org.mariuszgromada.math.mxparser;
+using MNproject.Models.Classes; 
 
-namespace MetodosNumericosFinal.Models
+namespace MNproject.Models
 {
-    public class simpsonMethod
+    public class SimpsonMethod
     {
-        public List<Simpson> GetSimpsons(element _in)
+        public List<Simpson> GetSimpsons(Parameter _in)
         {
             List<Simpson> table = new List<Simpson>();
             int n = int.Parse(_in.n);
             double a = double.Parse(_in.a, CultureInfo.InvariantCulture);
             double b = double.Parse(_in.b, CultureInfo.InvariantCulture);
             double h = (b - a) / n;
-            double sumSimpson = 0.0, sumFxi = 0.0;
             double[] fxi = new double[n + 1];
             double[] Xi = new double[n + 1];
             double[] SimpsonXi = new double[n + 1];
             Xi[0] = a;
             for (int i = 1; i <= n; i++)
             {
-                //se rellena los valore de Xi
+                //se crean los valore de Xi
                 Xi[i] = Xi[i - 1] + h;
             }
             Argument x = new Argument("x");
             Expression e;
+            //se crean los valores de F(xi) para cada Xi
             for (int i = 0; i <= n; i++)
             {
                 x.setArgumentValue(Xi[i]);
@@ -61,12 +62,11 @@ namespace MetodosNumericosFinal.Models
             //se crean las instanacias de la clase simpson y automaticamente se ingresan a la lista a retornar, llamada table
             for (int i = 0; i <= n; i++)
             {
-                table.Add(new Simpson { n = i, x = Xi[i], fx = fxi[i], resp = SimpsonXi[i] });
-                sumSimpson += SimpsonXi[i];
-                sumFxi += fxi[i];
+                table.Add(new Simpson { n = i, x = Xi[i], fx = fxi[i], simpsonXi = SimpsonXi[i] });
             }
             return table;
-        } 
-        
+
+
+        }
     }
 }

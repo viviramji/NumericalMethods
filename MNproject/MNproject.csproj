@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{16945898-A7AE-47AF-B736-ED63E766E960}</ProjectGuid>
+    <ProjectGuid>{F6F6DE66-B5C6-43B1-B473-E7354AE15AFE}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MetodosNumericosFinal</RootNamespace>
-    <AssemblyName>MetodosNumericosFinal</AssemblyName>
+    <RootNamespace>MNproject</RootNamespace>
+    <AssemblyName>MNproject</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -149,16 +149,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\element.cs" />
+    <Compile Include="Models\Classes\Parameter.cs" />
     <Compile Include="Models\ModelFacade.cs" />
-    <Compile Include="Models\Simpson.cs" />
-    <Compile Include="Models\simpsonMethod.cs" />
+    <Compile Include="Models\Classes\Simpson.cs" />
+    <Compile Include="Models\SimpsonMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\toastr.css" />
+    <Content Include="Content\styles.css" />
     <Content Include="docs\allclasses-frame.html" />
     <Content Include="docs\allclasses-noframe.html" />
     <Content Include="docs\constant-values.html" />
@@ -308,7 +308,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\Integracion.js" />
+    <Content Include="Scripts\Integration.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -319,7 +319,6 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\toastr.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -332,7 +331,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\IntegracionForm.cshtml" />
+    <Content Include="Views\Home\integrationForm.cshtml" />
     <Content Include="Views\Home\tableResultPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -367,9 +366,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53904</DevelopmentServerPort>
+          <DevelopmentServerPort>56315</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:53904/</IISUrl>
+          <IISUrl>http://localhost:56315/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

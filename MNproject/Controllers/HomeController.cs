@@ -1,32 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Threading.Tasks;
-using MetodosNumericosFinal.Models;
+using MNproject.Models;
+using MNproject.Models.Classes;
 
-namespace MetodosNumericosFinal.Controllers
+namespace MNproject.Controllers
 {
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            if(Session["tableSimpson"] == null)
+            if (Session["tableSimpson"] == null)
             {
-                List<Simpson> results = new List<Simpson>();
-                Session["tableSimpson"] = results;
+                List<Simpson> table = new List<Simpson>();
+                Session["tableSimpson"] = table;
             }
             return View();
         }
 
-        public ActionResult IntegracionForm()
+        public ActionResult integrationForm()
         {
             return View();
         }
+
         [HttpPost]
-        public JsonResult Integracion(element _in)
+        public JsonResult Integration(Parameter _in)
         {
+            ViewBag.n = int.Parse(_in.n);
+            ViewBag.a = double.Parse(_in.a, CultureInfo.InvariantCulture);
+            ViewBag.b = double.Parse(_in.b, CultureInfo.InvariantCulture);
+            ViewBag.h = (ViewBag.b - ViewBag.a) / ViewBag.n;
             ModelFacade facade = new ModelFacade();
             List<Simpson> table = (List<Simpson>)Session["tableSimpson"];
             table = facade.getResult(_in);
@@ -34,12 +41,15 @@ namespace MetodosNumericosFinal.Controllers
             return Json(new { msg = "ok" });
         }
 
-
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
+            return View();
+        }
         [HttpGet]
         public async Task<ActionResult> getTableSimpson()
         {
             return PartialView("tableResultPartial", Session["TableSimpson"]);
         }
-
     }
 }
