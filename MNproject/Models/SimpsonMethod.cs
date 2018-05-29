@@ -10,7 +10,7 @@ namespace MNproject.Models
 {
     public class SimpsonMethod
     {
-        public List<Simpson> GetSimpsons(Parameter _in)
+        public List<Simpson> GetSimpsonTable(Parameter _in)
         {
             List<Simpson> table = new List<Simpson>();
             int n = int.Parse(_in.n);
@@ -21,6 +21,9 @@ namespace MNproject.Models
             double[] Xi = new double[n + 1];
             double[] SimpsonXi = new double[n + 1];
             Xi[0] = a;
+
+            //double addXi = 0.0; double addSimpsonXi = 0.0;
+
             for (int i = 1; i <= n; i++)
             {
                 //se crean los valore de Xi
@@ -62,11 +65,24 @@ namespace MNproject.Models
             //se crean las instanacias de la clase simpson y automaticamente se ingresan a la lista a retornar, llamada table
             for (int i = 0; i <= n; i++)
             {
-                table.Add(new Simpson { n = i, x = Xi[i], fx = fxi[i], simpsonXi = SimpsonXi[i] });
-            }
+                table.Add(new Simpson { n = i, x = Xi[i], fx = fxi[i], simpsonXi = SimpsonXi[i] });            
+            }            
             return table;
+        }
 
-
+        public double ResultSimpson(Parameter _in)
+        {
+            List<Simpson> table = GetSimpsonTable(_in);
+            int n = int.Parse(_in.n);
+            double a = double.Parse(_in.a, CultureInfo.InvariantCulture);
+            double b = double.Parse(_in.b, CultureInfo.InvariantCulture);
+            double h = (b - a) / n;
+            double c = h / 3; double addSimpsonXi = 0.0;
+            foreach (var s in table)
+            {
+                addSimpsonXi += s.simpsonXi;
+            }
+            return c*addSimpsonXi;
         }
     }
 }

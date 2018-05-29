@@ -14,10 +14,11 @@ namespace MNproject.Controllers
     {
         public ActionResult Index()
         {
-            if (Session["tableSimpson"] == null)
+            if(Session["tableSimpson"] == null)
             {
-                List<Simpson> table = new List<Simpson>();
-                Session["tableSimpson"] = table;
+                Session["data"] = new Data();
+                Session["tableSimpson"] = new List<Simpson>();
+                Session["resultSimpson"] = new Double();
             }
             return View();
         }
@@ -27,29 +28,27 @@ namespace MNproject.Controllers
             return View();
         }
 
+        public ActionResult SimpsonResult()
+        {
+            return View();
+        }
+
         [HttpPost]
         public JsonResult Integration(Parameter _in)
-        {
-            ViewBag.n = int.Parse(_in.n);
-            ViewBag.a = double.Parse(_in.a, CultureInfo.InvariantCulture);
-            ViewBag.b = double.Parse(_in.b, CultureInfo.InvariantCulture);
-            ViewBag.h = (ViewBag.b - ViewBag.a) / ViewBag.n;
+        {          
             ModelFacade facade = new ModelFacade();
-            List<Simpson> table = (List<Simpson>)Session["tableSimpson"];
-            table = facade.getResult(_in);
-            Session["tableSimpson"] = table;
-            return Json(new { msg = "ok" });
+            List<Simpson> table = new List<Simpson>();  
+            Session["tableSimpson"] = facade.GetSimpsonTable(_in); 
+            Session["resultSimpson"] = facade.GetResultSimpson(_in);
+            Session["data"] = new Data { fx = _in.fx, a = _in.a, b = _in.b, n = _in.n };   
+            
+            return Json(new { url = "SimpsonResult"});
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
             return View();
-        }
-        [HttpGet]
-        public async Task<ActionResult> getTableSimpson()
-        {
-            return PartialView("tableResultPartial", Session["TableSimpson"]);
-        }
+        }        
     }
 }

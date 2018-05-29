@@ -149,6 +149,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Classes\Data.cs" />
     <Compile Include="Models\Classes\Parameter.cs" />
     <Compile Include="Models\ModelFacade.cs" />
     <Compile Include="Models\Classes\Simpson.cs" />
@@ -159,6 +160,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\styles.css" />
+    <Content Include="Content\toastr.css" />
     <Content Include="docs\allclasses-frame.html" />
     <Content Include="docs\allclasses-noframe.html" />
     <Content Include="docs\constant-values.html" />
@@ -319,6 +321,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\toastr.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -332,7 +335,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\integrationForm.cshtml" />
-    <Content Include="Views\Home\tableResultPartial.cshtml" />
+    <Content Include="Views\Home\SimpsonResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

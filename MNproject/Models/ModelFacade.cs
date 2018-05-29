@@ -8,9 +8,15 @@ namespace MNproject.Models
 {
     public class ModelFacade
     {
-        public List<Simpson> getResult(Parameter _in)
+        public List<Simpson> GetSimpsonTable(Parameter _in)
         {
-            return new SimpsonMethod().GetSimpsons(_in);
+            return new SimpsonMethod().GetSimpsonTable(_in);
         }
+
+        public double GetResultSimpson(Parameter _in)
+        {
+            return new SimpsonMethod().ResultSimpson(_in);
+        }
+
     }
 }

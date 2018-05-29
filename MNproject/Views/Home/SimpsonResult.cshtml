@@ -1,4 +1,15 @@
-﻿<div class="container">
+﻿
+@{
+    ViewBag.Title = "Integration Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var data = (MNproject.Models.Classes.Data)Session["data"];
+    var result = (double)Session["resultSimpson"];
+    var addFxi = 0.0;
+    var addSimpsonXi = 0.0;
+}
+
+<h3>Result for:  fx=  @data.fx ; a = @data.a ; b = @data.b ; n = @data.n  | <span style="color:orangered">Ans: @result</span></h3>
+<div class="container">
     <table class="table">
         <thead>
             <tr>
@@ -17,10 +28,10 @@
                     <td>@s.fx</td>
                     <td>@s.simpsonXi</td>
                 </tr>
-            }
+                addSimpsonXi += s.simpsonXi;
+                addFxi += s.fx;
+            }            
         </tbody>
     </table>
-    <h3>Results</h3>    
+    
 </div>
-
-
