@@ -22,3 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
+h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+}

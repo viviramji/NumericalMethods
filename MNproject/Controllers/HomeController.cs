@@ -45,6 +45,11 @@ namespace MNproject.Controllers
             return Json(new { url = "SimpsonResult"});
         }
 
+        public ActionResult BisectionForm()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

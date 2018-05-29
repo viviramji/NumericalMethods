@@ -149,8 +149,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BisectionMethod.cs" />
+    <Compile Include="Models\Classes\Bisection.cs" />
     <Compile Include="Models\Classes\Data.cs" />
     <Compile Include="Models\Classes\Parameter.cs" />
+    <Compile Include="Models\Classes\Table.cs" />
     <Compile Include="Models\ModelFacade.cs" />
     <Compile Include="Models\Classes\Simpson.cs" />
     <Compile Include="Models\SimpsonMethod.cs" />
@@ -336,6 +339,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\integrationForm.cshtml" />
     <Content Include="Views\Home\SimpsonResult.cshtml" />
+    <Content Include="Views\Home\BisectionForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
