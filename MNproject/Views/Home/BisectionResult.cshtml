@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "Bisection Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var result = (string)Session["resultBisection"];
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h4>Table</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Xi</th>
+                        <th>F(Xi)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (MNproject.Models.Classes.Table d in (List<MNproject.Models.Classes.Table>)Session["tableBisection"])
+                    {
+                        <tr>
+                            <td>@d.x</td>
+                            <td>@d.fx</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>R/ @result</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <canvas id="chart"></canvas>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+<script>
+    var label = [];
+    var data = [];
+
+    function GetLabel() {
+        return label;
+    }
+    function getLabels(xi) {
+        label.push(parseFloat(xi));
+    };
+
+
+
+    function getChart() {
+
+        var ctx = document.getElementById("myChart").getContext('2d');
+        console.log(ctx);
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                //Xs
+                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                datasets: [{
+                    label: '# of Votes',
+                    //F(x)'s
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    }   
+</script>
+
+

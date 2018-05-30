@@ -16,7 +16,7 @@ namespace MNproject.Models
                 double n = 10;
                 double b = 2;
                 double h = (b + a) / n; //ancho para Xi
-                string fx = "x^2";  
+                string fx = "(e^-x)-cos(3*x)-0.5";  
 
 
             List<Table> table = new List<Table>();
@@ -33,11 +33,11 @@ namespace MNproject.Models
             //tomamos la tabla donde de valores xi vs F(xi) buscamos donde F(xi) cambia de signo
             List<Table> table = Table(_in);           
             double tol = 0.01;
-            string fx = "x^2";
-            int[] indexes = new int[1];
+            string fx = "(e^-x)-cos(3*x)-0.5";
+            int[] indexes = new int[2];
             for (int i = 1; i < table.Count; i++)
             {
-                //aplica cuando f(xi)*f(x(i+1)) < 0) quiere decir que los valores entre esos dos valores f(x) cambia de signo
+                //aplica cuando f(xi)*f(x(i+1)) < 0) quiere decir para los valores entre f(x) cambia de signo
                 if (table[i].fx * table[i-1].fx < 0) 
                 {
                     //a = i - 1;
@@ -52,8 +52,8 @@ namespace MNproject.Models
                 }
             }
             //a y b tomaran los valores donde se puede aplicar el metodo de biseccion
-            var a = table[indexes[0]].x; 
-            var b = table[indexes[1]].x;
+            double a = table[indexes[0]].x; 
+            double b = table[indexes[1]].x;
             //List<Bisection> bisections = new List<Bisection>();
 
             double xr; //punto medio

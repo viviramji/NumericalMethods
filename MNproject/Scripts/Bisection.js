@@ -1,31 +1,29 @@
-﻿
-function simpsonResult() {
-    
+﻿function BisectionResult() {
     var Parameter = {
         fx: $('#fxi').val(),
         a: $('#a').val(),
         b: $('#b').val(),
         n: $('#n').val(),
-        show: function () {
-            return "Results for " + this.fx + " a = " + this.a + " b=" + this.b + " c=" + this.n;
-        }
+        t: $('#t').val()
     };
     console.log(Parameter);
+    alert("");
     $.ajax({
         type: "POST",
         datatype: "JSON",
         contentType: 'application/json; charset=utg-8',
-        url: "/Home/Integration",
+        url: "/Home/Bisection",
         data: JSON.stringify({
             '_in': Parameter
         }),
         success: function (data) {
-            //document.getElementById("tableInfo").innerHTML = Parameter.show(); 
+            alert("good");
             window.location.href = data.url;
         },
         error: function (data) {
-            alert("Please check your input");
+            alert("error");
         }
     });
-     
 }
+
+//console.log("conected")

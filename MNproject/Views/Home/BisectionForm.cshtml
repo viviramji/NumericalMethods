@@ -1,8 +1,54 @@
 ﻿
 @{
-    ViewBag.Title = "BisectionForm";
+    ViewBag.Title = "Bisection Form";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>BisectionForm</h2>
 
+<div class="container">    
+    <form method="post">
+        <div class="row">
+            <!--Important to do very well!-->
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="fxi">Fxi</label>
+                    <input type="text" class="form-control" id="fxi" placeholder="sin(x)*e^3x">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="a">Limite inferior a</label>
+                    <input type="text" class="form-control" id="a" placeholder="0">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="b">Limite superior b</label>
+                    <input type="text" class="form-control" id="b" placeholder="2">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="n">Numero de intervalos n</label>
+                    <input type="text" class="form-control" id="n" placeholder="2">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="t">Tolerancia</label>
+                    <input type="text" class="form-control" id="t" placeholder="sin(x)*e^3x">
+                </div>
+            </div>
+        </div>
+        <button type="submit" onclick="BisectionResult()" class="btn btn-default">Submit</button>
+    </form>
+
+</div>
+
+<script>
+    function test() {
+        alert("this a test")
+    }
+</script>
