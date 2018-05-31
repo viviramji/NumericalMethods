@@ -4,6 +4,8 @@ $(document).ready(function () {
     getChart();
 });
 
+
+/*
 var data = []; var label = [];
 function set(_data, _label) {
     data.push(parseFloat(_in));
@@ -16,7 +18,7 @@ function GetData() {
 
 function Getlabel() {
     return label;
-}
+}*/
 
 
 function getChart() {

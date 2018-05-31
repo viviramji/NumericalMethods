@@ -38,6 +38,8 @@ namespace MNproject.Controllers
 
         public ActionResult BisectionResult()
         {
+
+            ViewBag.data = (List<Table>)Session["tableBisection"];
             return View();
         }
 
@@ -62,6 +64,7 @@ namespace MNproject.Controllers
         {
             ModelFacade facade = new ModelFacade();
             Session["tableBisection"] = facade.GetBisectionTable(_in);
+            ViewBag.BisectionTable = (List<Table>)Session["tableBisection"];
             Session["resultBisection"] = facade.GetBisectionResult(_in);
             return Json(new { url = "BisectionResult" });
         }

@@ -3,7 +3,6 @@
     ViewBag.Title = "Bisection Result";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var result = (string)Session["resultBisection"];
-    var i = 0;
 }
 
 <div class="container">
@@ -13,7 +12,6 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>n</th>
                         <th>Xi</th>
                         <th>F(Xi)</th>
                     </tr>
@@ -22,11 +20,9 @@
                     @foreach (MNproject.Models.Classes.Table d in (List<MNproject.Models.Classes.Table>)Session["tableBisection"])
                     {
                         <tr>
-                            <td>@i</td>
                             <td>@d.x</td>
                             <td>@d.fx</td>
                         </tr>
-                        i++;
                     }
                 </tbody>
             </table>
@@ -46,6 +42,13 @@
         </div>
     </div>
 </div>
+
+<script>
+    var table = @Html.Raw(Json.Encode(ViewBag.data));
+    console.log(table);
+
+    console.log(table[1].)
+</script>
 
 
 
