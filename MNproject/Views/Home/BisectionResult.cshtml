@@ -19,14 +19,15 @@
                 <tbody>
                     @foreach (MNproject.Models.Classes.Table d in (List<MNproject.Models.Classes.Table>)Session["tableBisection"])
                     {
-                        <tr>
-                            <td>@d.x</td>
-                            <td>@d.fx</td>
-                        </tr>
+                    <tr>                        
+                        <td>@d.x</td>
+                        <td>@d.fx</td>
+                    </tr>
                     }
                 </tbody>
             </table>
         </div>
+
         <div class="col-md-8">
             <div class="row">
                 <div class="col-md-12">
@@ -42,12 +43,9 @@
         </div>
     </div>
 </div>
-
 <script>
+    //serializar la viewbag
     var table = @Html.Raw(Json.Encode(ViewBag.data));
-    console.log(table);
-
-    console.log(table[1].)
 </script>
 
 

@@ -1,48 +1,40 @@
 ﻿console.log("conected");
 
 $(document).ready(function () {
-    getChart();
+    
+    console.log(table.length);
+    var data = []; var label = [];
+    for (var i = 0; i < table.length; i++) {
+        data.push(table[i].fx);
+        label.push(table[i].x);
+    }
+    getChart(label, data);
 });
 
 
-/*
-var data = []; var label = [];
-function set(_data, _label) {
-    data.push(parseFloat(_in));
-    label.push(parseFloat(_label));
-}
-
-function GetData() {
-    return data;
-}
-
-function Getlabel() {
-    return label;
-}*/
-
-
-function getChart() {
+function getChart(_data, _label) {
     var ctx = document.getElementById("myChart").getContext('2d');
     console.log(ctx);
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
             //Xs
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: [-4,-2,0,2,4,5],
             datasets: [{
                 label: 'F(x)',
                 //F(x)'s
-                data: [12, 19, 3, 5, 2, 3],
+                data: [-4, -2, 0, 2, 4, 5],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)'
+                    'rgba(105,181,120, 0.2)'
                 ],
                 borderColor: [
-                    'rgba(255,99,132,1)'
+                    'rgba(58,125,68, 1)'
                 ],
                 borderWidth: 1
             }]
         },
         options: {
+
             scales: {
                 yAxes: [{
                     ticks: {

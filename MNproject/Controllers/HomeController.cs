@@ -33,12 +33,6 @@ namespace MNproject.Controllers
 
         public ActionResult SimpsonResult()
         {
-            return View();
-        }
-
-        public ActionResult BisectionResult()
-        {
-
             ViewBag.data = (List<Table>)Session["tableBisection"];
             return View();
         }
@@ -64,9 +58,20 @@ namespace MNproject.Controllers
         {
             ModelFacade facade = new ModelFacade();
             Session["tableBisection"] = facade.GetBisectionTable(_in);
-            ViewBag.BisectionTable = (List<Table>)Session["tableBisection"];
             Session["resultBisection"] = facade.GetBisectionResult(_in);
             return Json(new { url = "BisectionResult" });
+        }
+
+        public ActionResult BisectionResult()
+        {
+            ViewBag.data = (List<Table>)Session["tableBisection"];
+            return View();
+        }
+
+        //graph Section
+        public ActionResult GraphForm()
+        {
+            return View();
         }
 
         public ActionResult About()
