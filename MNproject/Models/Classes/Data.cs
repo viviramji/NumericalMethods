@@ -11,5 +11,6 @@ namespace MNproject.Models.Classes
         public string n { get; set; }
         public string a { get; set; }
         public string b { get; set; }
+        public string t { get; set; }
     }
 }

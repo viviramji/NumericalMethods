@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Evaluate Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <form method="post">
+        <div class="row">
+            <!--Important to do very well!-->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="fxi">F(xi)</label>
+                    <input type="text" class="form-control" id="fxi" placeholder="sin(x)*e^3*x">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="fxi">Valor para x </label>
+                    <input type="text" class="form-control" id="x" placeholder="2">
+                </div>
+            </div>
+        </div>       
+        <button type="submit" onclick="Evaluate()" class="btn btn-default">Submit</button>
+    </form>
+</div>

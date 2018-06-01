@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Globalization;
 using MNproject.Models.Classes;
 
 namespace MNproject.Models
@@ -20,7 +19,7 @@ namespace MNproject.Models
         }
 
         //bisectionMethod
-        public List<Table> GetBisectionTable(Parameter _in)
+        public List<Table> GetTable(Parameter _in)
         {
             return new BisectionMethod().Table(_in);
         }
@@ -30,6 +29,12 @@ namespace MNproject.Models
             return new BisectionMethod().getBisectionResult(_in);
         }
 
+        public double GetEvaluacion(Parameter _in)
+        {
+            string fx = _in.fx;
+            double x = double.Parse(_in.a, CultureInfo.InvariantCulture);
+            return new BisectionMethod().F(fx, x);
+        }
 
     }
 }

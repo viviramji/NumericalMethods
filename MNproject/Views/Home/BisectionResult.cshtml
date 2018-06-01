@@ -3,8 +3,10 @@
     ViewBag.Title = "Bisection Result";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var result = (string)Session["resultBisection"];
+    var data = (MNproject.Models.Classes.Data)Session["data"];
 }
-
+<p><h3>Result for:  fx=  @data.fx ; a = @data.a ; b = @data.b ; n = @data.n ; t = @data.t </h3></p>
+<p><h3><span style="color:#A3CF53">R/ @result</span></h3></p>
 <div class="container">
     <div class="row">
         <div class="col-md-4">
@@ -17,7 +19,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (MNproject.Models.Classes.Table d in (List<MNproject.Models.Classes.Table>)Session["tableBisection"])
+                    @foreach (MNproject.Models.Classes.Table d in (List<MNproject.Models.Classes.Table>)Session["table"])
                     {
                     <tr>                        
                         <td>@d.x</td>
@@ -28,18 +30,9 @@
             </table>
         </div>
 
-        <div class="col-md-8">
-            <div class="row">
-                <div class="col-md-12">
-                    <h4>R/ @result</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h4>Graph</h4>
-                    <canvas id="myChart" width="400" height="400"></canvas>
-                </div>
-            </div>
+        <div class="col-md-8">         
+            <h4>Graph</h4>
+            <canvas id="myChart" width="400" height="400"></canvas>                        
         </div>
     </div>
 </div>

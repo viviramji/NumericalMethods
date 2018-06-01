@@ -18,7 +18,7 @@
                         <div class="sidebar content-box" style="display: block;">
                             <ul class="nav">
                                 <!-- Main menu -->
-                                <li><a href="@Url.Action("Index","Home")"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
+                                <li><a href="@Url.Action("Index","Home")"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
                                 <!--my account-->
                                 <li class="submenu">
                                     <a href="#">
@@ -27,7 +27,7 @@
                                     </a>
                                     <ul>
                                         <li><a href="@Url.Action("integrationForm", "Home")" asp>Integracion Simpson</a></li>
-                                        <li><a href="@Url.Action("Derivates", "Home")">Derivacion</a></li>
+                                        <li><a href="#">Derivacion</a></li>
                                         <li><a href="@Url.Action("BisectionForm", "Home")">Bisccecion</a></li>
                                     </ul>
                                 </li>
@@ -37,11 +37,11 @@
                                         <span class="caret pull-right"></span>
                                     </a>
                                     <ul>
-                                        <li><a href="@Url.Action("Evaluar","Home")">Evaular</a></li>
-                                        <li><a href="@Url.Action("Graficar", "Home")">Graficar</a></li>
+                                        <li><a href="@Url.Action("EvaluateForm","Home")">Evaular</a></li>
+                                        <li><a href="@Url.Action("GraphForm", "Home")">Graficar</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#"><i class="glyphicon glyphicon-info-sign"></i> Acerca de</a></li>
+                                <li><a href="@Url.Action("About", "Home")"><i class="glyphicon glyphicon-info-sign"></i> Acerca de</a></li>
                             </ul>
                         </div>
                     </div>
@@ -72,6 +72,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="~/Scripts/BisectionChart.js"></script>
-
+    <script src="~/Scripts/Graph.js"></script>
+    <script src="~/Scripts/Evaluate.js"></script>
 </body>
 </html>

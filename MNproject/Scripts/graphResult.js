@@ -1,6 +1,4 @@
-﻿console.log("conected");
-
-$(document).ready(function () {
+﻿$(document).ready(function () {
     //table comes from the before view BisectionResult
     var data = []; var label = [];
     for (var i = 0; i < table.length; i++) {
@@ -33,7 +31,7 @@ function getChart(_label, _data) {
             }]
         },
         options: {
-            
+
             scales: {
                 yAxes: [{
                     ticks: {
@@ -43,4 +41,4 @@ function getChart(_label, _data) {
             }
         }
     });
-}  
+} 

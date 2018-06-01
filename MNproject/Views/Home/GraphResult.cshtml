@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Graph Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>X</th>
+                        <th>F(x)</th>
+                    </tr>                    
+                </thead>
+                <tbody>
+                    @foreach(MNproject.Models.Classes.Table d in (List<MNproject.Models.Classes.Table>)Session["table"])
+                    {
+                        <tr>
+                            <td>@d.x</td>
+                            <td>@d.fx</td>                          
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-9">
+            <!--Graph-->
+            <h4>Graph</h4>
+            <canvas id="myChart" width="600" height="600"></canvas>
+        </div>
+    </div>
+</div>
+
+<script>
+    //serializar la viewbag
+    var table = @Html.Raw(Json.Encode(ViewBag.data));
+</script>
+

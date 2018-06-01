@@ -315,6 +315,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Evaluate.js" />
+    <Content Include="Scripts\Graph.js" />
+    <Content Include="Scripts\graphResult.js" />
     <Content Include="Scripts\Integration.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -344,6 +347,10 @@
     <Content Include="Views\Home\BisectionForm.cshtml" />
     <Content Include="Views\Home\BisectionResult.cshtml" />
     <Content Include="Views\Home\GraphForm.cshtml" />
+    <Content Include="Views\Home\GraphResult.cshtml" />
+    <Content Include="Views\Home\EvaluateForm.cshtml" />
+    <Content Include="Views\Home\EvaluateResult.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

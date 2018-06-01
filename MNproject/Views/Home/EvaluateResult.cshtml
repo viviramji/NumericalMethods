@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "EvaluateResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var result = (double)Session["evaluate"];
+    var data = (MNproject.Models.Classes.Data)Session["data"];
+}
+
+<div class="container">
+    <p><h3>Para la funcion F(x) = @data.fx como X = @data.a el resultado es: </h3></p>
+    <br />
+    <h1 style="text-align: center; font-size: 12em">@result</h1>
+</div>
+
